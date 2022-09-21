@@ -1,7 +1,9 @@
 import React from 'react';
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const amount = useSelector((state)=>state.cart.amount)
     return (
         <>
             <nav>
@@ -10,7 +12,7 @@ const Navbar = () => {
                     <div className='nav-container' style={{display:"flex", justifyContent:"space-around", alignItems:"center"}}>
                         <AiOutlineShoppingCart />
                         <div className='amount-container'>
-                            <p className='total-amount'>0</p>
+                            <p className='total-amount'>{amount}</p>
                         </div>
                     </div>
                 </div>
